@@ -1,0 +1,190 @@
+Link {
+  text-decoration: none;
+  color: purple;
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: white;
+    max-height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.creatpostbtn {
+  margin-top: 0;
+  width: 180px;
+  height: 45px;
+  border: none;
+  background-color: #5E3DD3;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.creatpostbtn:hover {
+  background-color: #5D54A4;
+}
+
+.logo,
+.logo-wrapper {
+  flex: 20%;
+  display: flex;
+  justify-content: right;
+  padding-left: 50px;
+  align-items: center;
+  font-size: 32px;
+}
+
+.about-page {
+  justify-content: right;
+}
+
+
+nav {
+    flex: 80%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    align-items: center;
+}
+
+nav a,
+nav h3 {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: auto .5em;
+  color: rgb(63, 4, 103);
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+nav a:hover{
+    text-decoration: line-through;
+}
+
+
+.hidden-menu button {
+  display: none;
+}
+
+nav .rightside {
+  justify-content: flex-end;    
+}
+
+
+.signup {
+    color: #fff !important;
+    background-color: #5D54A4;
+    border-radius: 10px;
+    border: 1px solid #5D54A4;
+    padding: .75em 1.5em;
+  }
+.signup:hover {
+    border: 1px solid #5D54A4;
+    background-color: #5D54A4;
+    color: #FFF !important;
+  }
+    
+.signin {
+    color: #fff !important;
+    background-color: #5D54A4;
+    border-radius: 10px;
+    border: 1px solid #5D54A4;
+    padding: .75em 1.5em;
+  }
+.signin:hover {
+    border: 1px solid #5D54A4;
+    background-color: #5D54A4;
+    color: #FFF !important;
+  } 
+
+
+
+  @media only screen and (max-width: 880px) {
+    nav a,
+    nav h3 {
+      margin: auto .3em;
+      font-size: 14px;
+    }
+    .creatpostbtn {
+      font-size: 12px;
+      font-weight: 800;
+    }
+    nav a,
+    nav h3 {
+      margin: auto .3em;
+      padding: 5px 5px;
+      font-size: 14px;
+    }
+    .creatpostbtn {
+      width: 150px;
+      height: 40px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+  }
+
+ 
+  @media only screen and (max-width: 716px) {
+    .signin {
+        padding: .5em 1em;
+      }
+    .signup{
+        padding: .5em 1em;
+      }
+    .logo,
+    .logo-wrapper {
+        font-size: 24px;
+      }
+    .rightside {
+        display: none;
+      }
+    .creatpostbtn {
+        margin-right: 100px;
+      }
+   .hidden-menu button {
+        display: flex;
+        position: absolute;
+        right: 50px;
+        top: 20px;
+        padding: 15px 15px;
+        background-color: hsla(38, 22%, 90%, 0);
+        background-image: url('../assets/MenuBarImage/burger.png');
+        background-repeat: no-repeat, repeat;
+        background-position: center;
+        background-size: contain;
+        border: none;
+        border-radius: 5px;
+        margin-top: 0;
+      }
+     #hidden {
+      position: absolute;
+      /* padding: 8em; */
+      right: 0;
+      top: 0;
+      height: 100vh;
+      background: linear-gradient(115deg, #131314, #000000) ;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rightsideLink {
+      color:#fff;
+      background-color: rgb(0, 0, 0, 0);
+      margin: 20px auto;
+      text-align: center;
+      font-size: 24px;
+    }
+    nav .rightside {
+      justify-content: center;
+    }
+
+
+}

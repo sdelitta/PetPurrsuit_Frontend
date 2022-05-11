@@ -1,0 +1,31 @@
+.login-form {
+    min-width: 400px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    margin: 50px;
+    background-color: rgb(255, 166, 0);
+    border-radius: 17px;
+    box-shadow: ;
+}
+
+input {
+    display: flex;
+}
+
+.Username {
+    display: flex;
+    padding-bottom: 10px;
+}
+.Password {
+    display: flex;
+}
+
+.submit-button {
+    font-size: 32px;
+}
+
+.form-footer {
+    padding-bottom: 50px;
+}

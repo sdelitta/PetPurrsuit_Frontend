@@ -1,0 +1,16 @@
+.Footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.Middle-footer {
+    position: absolute;
+    background: white;
+    width: 100%;
+    bottom: -20px;
+    /* padding: -20px; */
+    font-size: 14px;
+    font-weight: 400;
+}

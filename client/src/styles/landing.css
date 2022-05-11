@@ -1,0 +1,248 @@
+.landing-leftside, .landing-rightside {
+    /* height: 50vh; */
+    width: 100%;
+}
+
+.landing-container {
+    width: 100%;
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    /* height: calc(100vh - 4em); */
+}
+
+.landing-leftside{
+    display:flex;
+    flex: 50%;
+    background-image:url('../assets/LandingImage/justin-veenema-NH1d0xX6Ldk-unsplash.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: calc(100vh - 8em);
+    position: relative;
+    animation: slide-in .5s;
+    animation-timing-function: ease-in-out;
+}
+
+.landing-content {
+    justify-content: center;
+}
+
+@keyframes slide-in {
+    0% {
+        left: -300px;
+        opacity: 0.3;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.landing-rightside{
+    display: flex;
+    flex:50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    animation: slide-out 1s;
+    animation-timing-function: ease-in;
+}
+@keyframes slide-out {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.landing-button-wrapper{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.landing-header {
+    font-size: 72px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.landing-description {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 2em 0 1.5em;
+    text-align: center;
+}
+
+.landingbutton {
+    color: #fff !important;
+    background-color: #5E3DD3;
+    border-radius: 10px;
+    border: 1px solid #5E3DD3;
+    width: 200px;
+    height:60px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 30px;
+}
+.landingbutton:hover {
+    color: white;
+    background-color: #867dc7;
+}
+
+
+.landingbuttonSignin {
+    color: #5E3DD3;
+    /* background-color: #5D54A4; */
+    border-radius: 10px;
+    border: 1px solid #5E3DD3;
+    width: 200px;
+    height:60px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.landingbuttonSignin:hover{
+    background-color: #867dc7;
+    color:#fff;
+}
+
+.backto-Signin {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#Project {
+    font-size: 72px;
+    background: linear-gradient(45deg, #5E3DD3, #D085F0, #f69d3c, #5E3DD3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 500%;
+    background-position: 100%;
+    animation: animatedText 4s ease-in infinite ;
+}
+
+@keyframes animatedText {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .landing-header {
+        font-size: 64px;
+    }
+    .landing-description {
+        font-size: 20px;
+        margin: 1.2em 0;
+    }
+    .landingbutton {
+        border-radius: 10px;
+        padding: 1em 2em;
+    } 
+    #Project {
+        font-size: 64px;
+    }
+    .landing-leftside{
+        flex: 100%;
+        width: 500px;
+        height: 500px;
+    }
+    .landing-rightside{ 
+        flex: 100%;
+    }
+    .counter {
+        width: 150px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .landing-container {
+        padding: 20px;
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    .landing-header {
+        font-size: 48px;
+    }
+    .landing-description {
+        font-size: 16px;
+        margin: 3em 0;
+        line-height: 30px;
+    }
+    .landingbutton {
+        border-radius: 10px;
+        padding: 1em 2em;
+        font-size: 14px;
+    } 
+    #Project {
+        font-size: 48px;
+    }
+    .landing-leftside{
+        flex: 100%;
+        width: 500px;
+        height: 500px;
+        margin-top: 100px;
+    }
+    .landing-rightside{
+        margin-left: 0px;
+    }
+    .counter {
+    display: none;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .landing-container {
+        flex-direction: row;
+    }
+    .landing-leftside{
+        flex: 100%;
+        width: 500px;
+        height: 500px;
+    }
+    .landing-rightside{
+        margin-left: 0px;
+        margin: 0;
+    }
+    .landingbutton,
+    .landingbuttonSignin {
+        border-radius: 10px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-right: 0;
+        width: 300px;
+        height:60px;
+    } 
+    .landing-button-wrapper {
+        flex-direction: column;
+    }
+    .backto-Signin {
+        margin-top: 0;
+    }
+    .counter {
+        display: none;
+    }
+}
