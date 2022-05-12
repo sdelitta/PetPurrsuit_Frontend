@@ -19,12 +19,16 @@ const FelineDetails = (props) => {
     return (
         <div className='feline-page'>
                 <div className='feline-title'>
-                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>THIS IS A CAT</h1>
+                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>{felinesDetails.shelter}</h1>
                 </div>
                 <div className='feline-wrapper'>                      
                         <div className='feline-content' key={felinesDetails.id}>
-                            {/* <Link to={`/felines/${feline.id}`}>{feline.dogName}</Link> */}
-                            <h3>{felinesDetails.catName}</h3>
+                            <h2>{felinesDetails.catName}</h2>
+                            <h2>Breed: {felinesDetails.breed}</h2>
+                            <h2>Age: {felinesDetails.age}</h2>
+                            <div className="animal-photo">
+                                <img src={felinesDetails.photo_url} alt=""></img>
+                            </div>
                         </div>
                 </div>
             <footer>

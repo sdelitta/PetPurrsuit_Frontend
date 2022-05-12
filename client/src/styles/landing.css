@@ -1,5 +1,8 @@
 .landing-leftside, .landing-rightside {
-    /* height: 50vh; */
+    max-height: 50vh;
+    /* min-height: 20vh; */
+    padding-top: 100px;
+    
     width: 100%;
 }
 
@@ -17,10 +20,11 @@
 .landing-leftside{
     display:flex;
     flex: 50%;
-    background-image:url('../assets/LandingImage/justin-veenema-NH1d0xX6Ldk-unsplash.jpeg');
+    background-image:url('../assets/LandingImage/gettyimages-1310156391.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    /* margin-top: 15vh; */
     height: calc(100vh - 8em);
     position: relative;
     animation: slide-in .5s;

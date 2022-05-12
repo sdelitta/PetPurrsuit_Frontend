@@ -12,14 +12,18 @@ const Shelters = () => {
         }
         handleShelter()
     }, [])
-console.log(shelters)
+
+
+console.log("shelters", shelters)
     return (
         <div className='shelter-page'>
                 <div className='shelter-title'>
-                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A SHELTER</h1>
+                {shelters.map((shelter) => (
+                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A {shelter.state} SHELTER</h1>
+                    ))}
                 </div>
                 <div className='shelter-wrapper'>
-                    {shelters.map((shelter) => (                        
+                     {shelters.map((shelter) => (                       
                         <div className='shelter-content' key={shelter.id}>
                             <Link to={`/shelters/${shelter.id}`}>{shelter.shelterName}</Link>
                         </div>

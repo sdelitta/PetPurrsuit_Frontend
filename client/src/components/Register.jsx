@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
 import AxiosInstance from '../AxiosInstance'
 import {LoginContext} from '../LoginContext'
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
       email: '',
@@ -42,35 +44,38 @@ function Register() {
             })
         })
         .catch(error => console.error)
+        navigate('/login')
 
     }
 
     return (
         <div className='form signup-form'>
             <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                Email: <input type='email' name='email' placeholder='Email'
-                    value={formData.email} onChange={handleChange} />
-                First name: <input type='text'
-                    name='first_name' placeholder='First Name'
-                    value={formData.first_name} onChange={handleChange} />
-                Last name: <input type='text'
-                    name='last_name' placeholder='Last Name'
-                    value={formData.last_name} onChange={handleChange} />
-                Username: <input type='text' 
-                    name='username' placeholder='Username'
-                    value={formData.username} onChange={handleChange} />
-                Password: <input type='password'
-                    name='password' placeholder='MINIMUM 8 CHARACTERS'
-                    value={formData.password} onChange={handleChange} />
-                        
-                <button type='submit'>Register</button>                
-                
-                <div className="form-footer">
-                <p>Have an account already?</p>
-                <a href='/login/'> Log-In </a>
-                    </div>
-            </form>
+            <div className='register-form'>
+                <form onSubmit={handleSubmit} >
+                    Email: <input type='email' name='email' placeholder='Email'
+                        value={formData.email} onChange={handleChange} />
+                    First name: <input type='text'
+                        name='first_name' placeholder='First Name'
+                        value={formData.first_name} onChange={handleChange} />
+                    Last name: <input type='text'
+                        name='last_name' placeholder='Last Name'
+                        value={formData.last_name} onChange={handleChange} />
+                    Username: <input type='text' 
+                        name='username' placeholder='Username'
+                        value={formData.username} onChange={handleChange} />
+                    Password: <input type='password'
+                        name='password' placeholder='MINIMUM 8 CHARACTERS'
+                        value={formData.password} onChange={handleChange} />
+                            
+                    <button type='submit'>Register</button>                
+                    
+                    <div className="form-footer">
+                    <p>Have an account already?</p>
+                    <a href='/login/'> Log-In </a>
+                        </div>
+                </form>
+            </div>
         </div>
     )
 }

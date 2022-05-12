@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { GetSheltersDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
+import shelterDetails from '../pages/ShelterDetails'
 
 const SheltersDetails = (props) => {
     const [sheltersDetails, setSheltersDetails] = useState([])
@@ -19,6 +20,13 @@ const SheltersDetails = (props) => {
     if (sheltersDetails.canines) return (
         <div className='shelter-page'>
                 <div className='shelter-title'>
+                <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>{sheltersDetails.shelterName}</h1>
+                </div>
+                <div className="shelter-details">
+                    <a href={`${sheltersDetails.website}`} target="_blank" rel="noreferrer">Link to Shelter Website</a>
+
+                </div>
+                <div className='select-animal'>
                     <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A POOCH</h1>
                 </div>
                 <div className='shelter-wrapper'>
@@ -28,7 +36,7 @@ const SheltersDetails = (props) => {
                         </div>
                     ))}
                 </div>
-                <div className='shelter-title'>
+                <div className='select-animal'>
                     <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A CAT</h1>
                 </div>
                 <div className='shelter-wrapper'>

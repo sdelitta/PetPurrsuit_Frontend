@@ -12,18 +12,39 @@ import AnimalDetails from './components/AnimalDetails'
 import CanineDetails from './components/CanineDetails'
 import FelineDetails from './components/FelineDetails'
 import Landing from './pages/Landing'
+import MyProfile from './pages/MyProfile'
 import './styles/App.css'
 import axios from 'axios'
 import { BASE_URL } from './globals'
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Client } from "@petfinder/petfinder-js"
-
+import AxiosInstance from './AxiosInstance'
 
 const App = () => {
   const [loginStatus, setLoginStatus] = useState(false)
-  
+  const [user, setUser] = useState(null)
 
+  const handleLogOut = () => {
+    setUser(null)
+    setLoginStatus(false)
+    localStorage.clear()
+  }
+
+  const handleLogin = async (username) => {
+    const userList = await AxiosInstance.get(`users/${username}`);
+    console.log(userList);
+    setUser(userList.data);
+  };
+
+  useEffect(() => {
+    handleLogin(localStorage.username)
+      .then((res) => {
+        setUser(res.data);
+        console.log(user);
+      })
+      .catch((error) => console.error);
+  }, []);
 
   // const componentDidMount = () => {
   //   const script = document.createElement("script");
@@ -47,32 +68,32 @@ const App = () => {
   // .then(resp => {
   //   resp.data.animals.forEach(function(animal) {
   //       console.log(animal)
-        
   //   })
   // });
 
 
   return (
     <div className="App">
-       <LoginContext.Provider value={{loginStatus, setLoginStatus}}>
+       <LoginContext.Provider value={{loginStatus, setLoginStatus, user}}>
       <header className="App-header">
-        <Nav/>
+        <Nav user={user} loginStatus={loginStatus}/>
         <Routes>
           <Route path='/' element={<Landing />}/>
-          <Route path='/states' element={<States />}/>
-          <Route path='/states/:id' element={<StatesDetails />}/>
+          <Route path='/states' element={<States user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/states/:id' element={<StatesDetails user={user} loginStatus={loginStatus}/>}/>
           
-          <Route path='/shelters' element={<Shelters />}/>
-          <Route path='/shelters/:id' element={<ShelterDetails />}/>
+          <Route path='/shelters' element={<Shelters user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/shelters/:id' element={<ShelterDetails user={user} loginStatus={loginStatus}/>}/>
 
-          <Route path='/canines' element={<AnimalDetails />}/>
-          <Route path='/canines/:id' element={<CanineDetails />}/>
-          <Route path='/felines' element={<AnimalDetails />}/>
-          <Route path='/felines/:id' element={<FelineDetails />}/>
+          <Route path='/canines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/canines/:id' element={<CanineDetails user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/felines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/felines/:id' element={<FelineDetails user={user} loginStatus={loginStatus}/>}/>
 
-          <Route path='/register' element={ <Register /> } />
+          <Route path='/register' element={ <Register user={user} loginStatus={loginStatus}/>}/>
           <Route path='/login' element={ <Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} /> } />
           <Route path='/logout' element={ <Logout setLoginStatus={setLoginStatus}/> } />
+          <Route path='/users/:id' element={<MyProfile user={user} loginStatus={loginStatus}/>}/>
         </Routes>
       </header>
       <div className="body">

@@ -18,8 +18,8 @@ const StatesDetails = (props) => {
     // console.log(statesDetails)
     if (statesDetails.shelters) return (
         <div className='state-page'>
-                <div className='state-title'>
-                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A SHELTER</h1>
+                <div className='shelter-title'>
+                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A {statesDetails.stateName.toUpperCase()} SHELTER</h1>
                 </div>
                 <div className='state-wrapper'>
                     {statesDetails.shelters.map((shelter) => (                        

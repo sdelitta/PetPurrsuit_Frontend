@@ -1,4 +1,4 @@
-.login-form {
+/* .login-form {
     min-width: 400px;
     display:flex;
     align-items: center;
@@ -7,12 +7,12 @@
     margin: 50px;
     background-color: rgb(255, 166, 0);
     border-radius: 17px;
-    box-shadow: ;
-}
+    /* box-shadow: ; */
+ */
 
-input {
+/* input {
     display: flex;
-}
+} */
 
 .Username {
     display: flex;
@@ -22,10 +22,10 @@ input {
     display: flex;
 }
 
-.submit-button {
+/* .submit-button {
     font-size: 32px;
-}
+} */
 
-.form-footer {
+/* .form-footer {
     padding-bottom: 50px;
-}
+} */

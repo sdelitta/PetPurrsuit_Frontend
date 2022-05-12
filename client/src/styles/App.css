@@ -16,7 +16,8 @@
 .App-header {
   background-color: #4d5a74;
   max-height: 77vh;
-  padding-bottom: 15vh;
+  padding-bottom: 18vh;
+  /* padding-top: 30vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +37,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form {
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  flex-direction: column;
+  padding: 10px;
+  /* margin: 30px; */
+  background-color: rgb(255, 166, 0);
+  border-radius: 17px;
+  box-shadow:1px 1px black;
+  text-shadow: 1px 1px black;
+}
+
+.form-footer {
+  padding-bottom: 30px;
+  max-height: 10px;
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+}
+.submit-button {
+  padding: 5px;
+  font-size: 32px;
+}
+
+.animal-photo img{
+  height: 25vw;
+  width: auto;
+  margin: auto;
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
