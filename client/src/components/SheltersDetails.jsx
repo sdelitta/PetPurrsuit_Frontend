@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { GetSheltersDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
 import Footer from '../components/Footer'
-import shelterDetails from '../pages/ShelterDetails'
 
 const SheltersDetails = (props) => {
     const [sheltersDetails, setSheltersDetails] = useState([])
     const {id} = useParams()
-    console.log(id)
+    // console.log(id)
     useEffect(() => {
         const handleShelter = async () => {
             const data = await GetSheltersDetails(id)

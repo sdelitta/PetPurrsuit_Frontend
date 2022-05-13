@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { GetCaninesDetails } from '../services/PostServices'
-import { Link, useParams } from 'react-router-dom'
+import { GetCaninesDetails, GetUsersDetails } from '../services/PostServices'
+import { useParams } from 'react-router-dom'
 import Footer from './Footer'
+import AddCanineButton from './AddCanineButton'
 
 const CanineDetails = (props) => {
     const [caninesDetails, setCaninesDetails] = useState([])
     const {id} = useParams()
-    // console.log(id)
+    
     useEffect(() => {
         const handleCanine = async () => {
             const data = await GetCaninesDetails(id)
@@ -14,7 +15,20 @@ const CanineDetails = (props) => {
             console.log(data)
         }
         handleCanine()
+        console.log(caninesDetails)
     }, [id])
+
+    // useEffect(() => {
+    //     const handleUser = async () => {
+    //         const data = await GetUsersDetails(props.user.id)
+    //         console.log(data)
+    //     }
+    //     handleUser()
+    // }, [id])
+
+    useEffect(() => {
+        console.log(caninesDetails)
+    }, [caninesDetails])
 
     return (
         <div className='canine-page'>
@@ -28,6 +42,7 @@ const CanineDetails = (props) => {
                             <h2>Age: {caninesDetails.age}</h2>
                             <div className="animal-photo">
                                 <img src={caninesDetails.photo_url} alt=""></img>
+                                <AddCanineButton user={props.user} caninesDetails={caninesDetails}/>
                             </div>
                         </div>
                 </div>

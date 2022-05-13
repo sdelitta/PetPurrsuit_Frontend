@@ -3,7 +3,7 @@ import { GetStates } from '../services/PostServices'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
-const States = () => {
+const States = (props) => {
     const [states, setStates] = useState([])
     
     useEffect(() => {
@@ -12,7 +12,14 @@ const States = () => {
             setStates(data)
         }
         handleState()
+        console.log(props.user)
     }, [])
+
+    useEffect(() => {
+
+        console.log(props.user)
+    }, [states])
+
     console.log(states)
     return (
         <div className='state-page'>

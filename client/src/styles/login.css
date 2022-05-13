@@ -1,14 +1,10 @@
-/* .login-form {
-    min-width: 400px;
+.login-form {
+    padding-top: 40px;
     display:flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 40px;
-    margin: 50px;
-    background-color: rgb(255, 166, 0);
-    border-radius: 17px;
-    /* box-shadow: ; */
- */
+    font-size: calc(10px + 2vmin);
+}
 
 /* input {
     display: flex;
@@ -16,10 +12,11 @@
 
 .Username {
     display: flex;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 .Password {
     display: flex;
+    padding-left:16px;
 }
 
 /* .submit-button {

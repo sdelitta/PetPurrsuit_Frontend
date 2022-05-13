@@ -9,8 +9,8 @@ const Nav = ({ user, loginStatus, handleLogOut }) => {
 
 
   let authenticatedOptions;
-  console.log(user, loginStatus)
-  if (user) {
+  // console.log(user, loginStatus)
+  // if (user) {
     authenticatedOptions = (
       <nav>
         <div className="rightside" id={showLinks ? 'hidden' : ''}>
@@ -47,6 +47,6 @@ const Nav = ({ user, loginStatus, handleLogOut }) => {
 
   )
 }
-}
+
 
 export default Nav;

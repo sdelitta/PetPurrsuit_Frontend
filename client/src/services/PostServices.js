@@ -82,3 +82,15 @@ export const GetUsersDetails = async (id) => {
         throw error
     }
 }
+
+export const AddCanine = async (user, canine) => {
+    const payload = [user, canine]
+    const id = user.id
+    console.log(user.id)
+    try {
+        const res = await AxiosInstance.put(`/users/${id}`, payload)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}

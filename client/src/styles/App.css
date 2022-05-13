@@ -14,10 +14,8 @@
 }
 
 .App-header {
-  background-color: #4d5a74;
-  max-height: 77vh;
-  padding-bottom: 18vh;
-  /* padding-top: 30vh; */
+  max-height: 5vh;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,17 +37,27 @@
   }
 }
 
+body {
+  display: flex;
+  background-color: #4d5a74;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+}
+
 form {
   display:flex;
   align-content:center;
   justify-content:center;
   flex-direction: column;
   padding: 10px;
-  /* margin: 30px; */
+  margin: 30px;
   background-color: rgb(255, 166, 0);
   border-radius: 17px;
   box-shadow:1px 1px black;
   text-shadow: 1px 1px black;
+  font-size: calc(10px + 2vmin);
+  max-width: fit-content;
 }
 
 .form-footer {

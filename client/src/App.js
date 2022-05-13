@@ -77,6 +77,8 @@ const App = () => {
        <LoginContext.Provider value={{loginStatus, setLoginStatus, user}}>
       <header className="App-header">
         <Nav user={user} loginStatus={loginStatus}/>
+      </header>
+      <div className="body">
         <Routes>
           <Route path='/' element={<Landing />}/>
           <Route path='/states' element={<States user={user} loginStatus={loginStatus}/>}/>
@@ -95,8 +97,7 @@ const App = () => {
           <Route path='/logout' element={ <Logout setLoginStatus={setLoginStatus}/> } />
           <Route path='/users/:id' element={<MyProfile user={user} loginStatus={loginStatus}/>}/>
         </Routes>
-      </header>
-      <div className="body">
+
       </div>
       </LoginContext.Provider>
       <Footer />
