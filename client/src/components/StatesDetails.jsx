@@ -6,12 +6,12 @@ import Footer from './Footer'
 const StatesDetails = (props) => {
     const [statesDetails, setStatesDetails] = useState([])
     const {id} = useParams()
-    console.log(id)
+    // console.log(id)
     useEffect(() => {
         const handleState = async () => {
             const data = await GetStatesDetails(id)
             setStatesDetails(data)
-            console.log(data)
+            // console.log(data)
         }
         handleState()
     }, [id])

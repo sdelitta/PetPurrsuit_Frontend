@@ -88,7 +88,7 @@ const App = () => {
           <Route path='/shelters/:id' element={<ShelterDetails user={user} loginStatus={loginStatus}/>}/>
 
           <Route path='/canines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
-          <Route path='/canines/:id' element={<CanineDetails user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/canines/:id' element={<CanineDetails user={user} setUser={setUser}loginStatus={loginStatus}/>}/>
           <Route path='/felines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
           <Route path='/felines/:id' element={<FelineDetails user={user} loginStatus={loginStatus}/>}/>
 

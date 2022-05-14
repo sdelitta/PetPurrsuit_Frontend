@@ -12,15 +12,15 @@ const States = (props) => {
             setStates(data)
         }
         handleState()
-        console.log(props.user)
+        // console.log(props.user)
     }, [])
 
     useEffect(() => {
 
-        console.log(props.user)
+        // console.log(props.user)
     }, [states])
 
-    console.log(states)
+    // console.log(states)
     return (
         <div className='state-page'>
                 <div className='state-title'>

@@ -15,6 +15,7 @@ const Nav = ({ user, loginStatus, handleLogOut }) => {
       <nav>
         <div className="rightside" id={showLinks ? 'hidden' : ''}>
           {/* <Link className="rightsideLink" to="/myprofile">My Profile</Link> */}
+          <Link className="rightsideLink" to="/users/:id">MyProfile</Link>
           <Link className="rightsideLink" to="/states">States</Link>
           <Link className="rightsideLink" to="/shelters">Shelters</Link>
           <Link className="rightsideLink" to="/about">About</Link>

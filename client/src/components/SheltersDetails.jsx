@@ -11,7 +11,7 @@ const SheltersDetails = (props) => {
         const handleShelter = async () => {
             const data = await GetSheltersDetails(id)
             setSheltersDetails(data)
-            console.log(data)
+            // console.log(data)
         }
         handleShelter()
     }, [id])
