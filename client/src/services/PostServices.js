@@ -89,7 +89,7 @@ export const AddCanine = async (id, data) => {
     // const id = user.id
     // console.log(user.id)
     try {
-        const res = await AxiosInstance.put(`/users/${id}`, data)
+        const res = await AxiosInstance.put(`/shelters/${id}`, data)
         return res.data
     } catch (error) {
         throw error

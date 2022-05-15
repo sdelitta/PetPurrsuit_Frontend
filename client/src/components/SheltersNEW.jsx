@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { GetShelters } from '../services/PostServices'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import AddShelter from './AddShelter'
+import DeleteShelter from './DeleteShelter'
+import EditShelter from './EditShelter'
 
-const Shelters = (props) => {
+const SheltersNEW = (props) => {
     const [shelters, setShelters] = useState([])
     useEffect(() => {
         const handleShelter = async () => {
@@ -25,8 +28,13 @@ console.log("shelters", shelters)
                      {shelters.map((shelter) => (                       
                         <div className='shelter-content' key={shelter.id}>
                             <Link to={`/shelters/${shelter.id}`}>{shelter.shelterName}</Link>
+                            <DeleteShelter id={shelter.id}/>
+                            <EditShelter id={shelter.id}/>
                         </div>
                         ))}
+                </div>
+                <AddShelter />
+                <div className='add-shelter-form'>
                 </div>
             <footer>
             </footer>
@@ -34,4 +42,4 @@ console.log("shelters", shelters)
     ) 
 }
 
-export default Shelters
+export default SheltersNEW

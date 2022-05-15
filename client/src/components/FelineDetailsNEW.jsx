@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { GetFelinesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
 import Footer from './Footer'
-import AddAnimalButton from './FORMERAddCanineButton'
 
 const FelineDetails = (props) => {
     const [felinesDetails, setFelinesDetails] = useState([])
@@ -29,7 +28,6 @@ const FelineDetails = (props) => {
                             <h2>Age: {felinesDetails.age}</h2>
                             <div className="animal-photo">
                                 <img src={felinesDetails.photo_url} alt=""></img>
-                                <AddAnimalButton user={props.user} felinesDetails={felinesDetails}/>
                             </div>
                         </div>
                 </div>

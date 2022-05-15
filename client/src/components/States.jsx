@@ -3,9 +3,8 @@ import { GetStates } from '../services/PostServices'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
-const States = (props) => {
+const States = () => {
     const [states, setStates] = useState([])
-    
     useEffect(() => {
         const handleState = async () => {
             const data = await GetStates()
@@ -34,7 +33,6 @@ const States = (props) => {
                     ))}
                 </div>
             <footer>
-                 <Footer />
             </footer>
         </div>
     ) 

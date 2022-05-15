@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { GetStatesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
 import Footer from './Footer'
+import AddShelter from './AddShelter'
+import DeleteShelter from './DeleteShelter'
+import EditShelter from './EditShelter'
 
 const StatesDetails = (props) => {
     const [statesDetails, setStatesDetails] = useState([])
     const {id} = useParams()
-    // console.log(id)
+    console.log(id)
     useEffect(() => {
         const handleState = async () => {
             const data = await GetStatesDetails(id)
@@ -25,11 +28,15 @@ const StatesDetails = (props) => {
                     {statesDetails.shelters.map((shelter) => (                        
                         <div className='state-content' key={shelter.id}>
                             <Link to={`/shelters/${shelter.id}`}>{shelter.shelterName}</Link>
+                            <EditShelter id={shelter.id}/>
+                            <DeleteShelter id={shelter.id}/>
+
                         </div>
                     ))}
                 </div>
+                <AddShelter id={id} />
             <footer>
-                 <Footer />
+                 {/* <Footer /> */}
             </footer>
         </div>
     ) 
