@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetFelinesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
-import Footer from './Footer'
 
 const FelineDetails = (props) => {
     const [felinesDetails, setFelinesDetails] = useState([])
@@ -31,9 +30,6 @@ const FelineDetails = (props) => {
                             </div>
                         </div>
                 </div>
-            <footer>
-                 <Footer />
-            </footer>
         </div> 
     
     )

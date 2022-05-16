@@ -37,7 +37,7 @@ function AddShelter( {id} ) {
             <div className="addshelter-formfield">
                 <h3>Add Shelter Here</h3>
               <label>
-                Name of the shelter<span>*</span>
+                Shelter Name<span>*</span>
               </label>
               <input
                 onChange={(e) => setShelterName(e.target.value)}

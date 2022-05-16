@@ -2,8 +2,7 @@ import LoginContext from './LoginContext'
 import Login from './components/Login'
 import Register from './components/Register'
 import Logout from './components/Logout'
-import Nav from './components/Nav'
-import NavNEW from './components/Nav'
+import NavNEW from './components/NavNEW'
 import Footer from './components/Footer'
 import States from './components/States'
 import StatesDetails from './components/StatesDetails'
@@ -11,13 +10,14 @@ import AddShelter from './components/AddShelter'
 import DeleteShelter from './components/DeleteShelter'
 import Shelters from './components/Shelters'
 import SheltersNEW from './components/SheltersNEW'
-import ShelterDetails from './pages/ShelterDetails'
-import ShelterDetailsNEW from './pages/ShelterDetails'
+import ShelterDetails from './pages/ShelterDetailsPage'
+import SheltersDetailsNEW from './components/SheltersDetailsNEW'
 import AnimalDetails from './components/AnimalDetails'
+import AnimalList from './pages/AnimalListPage'
 import CanineDetails from './components/CanineDetails'
-import CanineDetailsNEW from './components/CanineDetails'
+import CanineDetailsNEW from './components/CanineDetailsNEW'
 import FelineDetails from './components/FelineDetails'
-import FelineDetailsNEW from './components/FelineDetails'
+import FelineDetailsNEW from './components/FelineDetailsNEW'
 import Landing from './pages/LandingNEW'
 import LandingNEW from './pages/LandingNEW'
 import MyProfile from './pages/MyProfile'
@@ -95,12 +95,12 @@ const App = () => {
           
           <Route path='/shelters' element={<SheltersNEW user={user} loginStatus={loginStatus}/>}/>
           <Route path='/shelters/addshelters' element={<AddShelter/>} />
-          <Route path='/shelters/:id' element={<ShelterDetailsNEW user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/shelters/:id' element={<SheltersDetailsNEW user={user} loginStatus={loginStatus}/>}/>
           <Route path='/shelters/:id/delete' element={<DeleteShelter/>} />
 
-          <Route path='/canines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
+          <Route path='/animals' element={<AnimalList user={user} loginStatus={loginStatus}/>}/>
           <Route path='/canines/:id' element={<CanineDetailsNEW user={user} setUser={setUser}loginStatus={loginStatus}/>}/>
-          <Route path='/felines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/>
+          {/* <Route path='/felines' element={<AnimalDetails user={user} loginStatus={loginStatus}/>}/> */}
           <Route path='/felines/:id' element={<FelineDetailsNEW user={user} loginStatus={loginStatus}/>}/>
 
           <Route path='/register' element={ <Register user={user} loginStatus={loginStatus}/>}/>
@@ -111,7 +111,7 @@ const App = () => {
 
       </div>
       {/* </LoginContext.Provider> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

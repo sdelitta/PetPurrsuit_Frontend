@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetCaninesDetails, GetFelinesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
-import Footer from './Footer'
 
 const AnimalDetails = (props) => {
     const [caninesDetails, setCaninesDetails] = useState([])
@@ -27,40 +26,31 @@ const AnimalDetails = (props) => {
     }, [id])
     console.log(caninesDetails)
 
-    if (caninesDetails) return (
+    return (
         <div className='canine-page'>
-                <div className='canine-title'>
-                    <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>THIS IS A DOG</h1>
-                </div>
-                <div className='canine-wrapper'>                      
-                        <div className='canine-content' key={caninesDetails.id}>
-                            {/* <Link to={`/canines/${canine.id}`}>{canine.dogName}</Link> */}
-                            <h3>{caninesDetails.dogName}</h3>
-                        </div>
-                </div>
-            <footer>
-                 <Footer />
-            </footer>
-        </div> 
-    
-    )
-     
-    if (felinesDetails) return (
-        <div className='feline-page'>
+            <div className='canine-title'>
+                <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>THIS IS A DOG</h1>
+            </div>
+            <div className='canine-wrapper'>                      
+                {caninesDetails.map((canine) => (                        
+                    <div className='canine-content' key={canine.id}>
+                        <Link to={`/canines/${canine.id}`}>{canine.dogName}</Link>
+                    </div>
+                ))}
+            </div>
+
+            <div className='feline-page'>
                 <div className='feline-title'>
                     <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>THIS IS A CAT</h1>
                 </div>
-                <div className='feline-wrapper'>           
-                        <div className='feline-content' key={felinesDetails.id}>
-                            
-                            
-                            {/* <Link to={`/felines/${feline.id}`}>{feline.catName}</Link> */}
-                            <h3>{felinesDetails.catName}</h3>
+                <div className='feline-wrapper'> 
+                    {felinesDetails.map((feline) => (                        
+                        <div className='feline-content' key={feline.id}>
+                            <Link to={`/felines/${feline.id}`}>{feline.catName}</Link>
                         </div>
+                    ))}          
                 </div>
-            <footer>
-                 <Footer />
-            </footer>
+            </div>
         </div>
     )
 

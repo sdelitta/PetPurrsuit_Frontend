@@ -3,12 +3,14 @@ import { GetSheltersDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
 import EditShelter from './EditShelter'
 import DeleteShelter from './DeleteShelter'
-import sheltersDetails from '../pages/ShelterDetails'
+import AddFeline from '../components/AddFeline'
+import AddCanine from '../components/AddCanine'
+import '../styles/shelter.css'
 
 const SheltersDetailsNEW = (props) => {
     const [sheltersDetails, setSheltersDetails] = useState([])
     const {id} = useParams()
-    // console.log(id)
+    console.log(id)
     useEffect(() => {
         const handleShelter = async () => {
             const data = await GetSheltersDetails(id)
@@ -22,11 +24,13 @@ const SheltersDetailsNEW = (props) => {
         <div className='shelter-page'>
                 <div className='shelter-title'>
                 <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>{sheltersDetails.shelterName}</h1>
-                <EditShelter id={sheltersDetails.id}/>
-                <DeleteShelter id={sheltersDetails.id}/>
                 </div>
                 <div className="shelter-details">
                     <a href={`${sheltersDetails.website}`} target="_blank" rel="noreferrer">Link to Shelter Website</a>
+                    <div className="editshelter-form">
+                    <EditShelter id={sheltersDetails.id}/>
+                    <DeleteShelter id={sheltersDetails.id}/>
+                </div>
                 </div>
                 <div className='select-animal'>
                     <h1 style={{backgroundColor: "rgba(0, 0, 0, 0)"}}>SELECT A POOCH</h1>
@@ -48,6 +52,10 @@ const SheltersDetailsNEW = (props) => {
                         </div>
                     ))}
                 </div>
+                <div className="animal-forms">
+        <AddCanine />
+        <AddFeline />
+      </div>
         </div>
     ) 
 }

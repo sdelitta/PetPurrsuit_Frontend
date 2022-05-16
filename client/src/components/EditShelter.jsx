@@ -42,9 +42,9 @@ function EditShelter( {id} ) {
         <div className="editshelter-bottom">
           <form onSubmit={handleSubmit} className="editshelter-form">
             <div className="editshelter-formfield">
-                <h3>Edit Shelter Here</h3>
+                <h4>Edit Shelter Here</h4>
               <label>
-                Name of the shelter<span>*</span>
+                Shelter Name<span>*</span>
               </label>
               <input
                 onChange={(e) => setShelterName(e.target.value)}

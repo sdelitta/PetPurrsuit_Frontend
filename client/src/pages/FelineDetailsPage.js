@@ -1,10 +1,10 @@
 import React from "react"
-import FelineDetails from "../components/FelinesDetails"
+import FelineDetailsNEW from "../components/FelinesDetails"
 
 const felineDetails = () => {
   return (
     <div>
-      <FelineDetails />
+      <FelineDetailsNEW />
     </div>
   )
 }

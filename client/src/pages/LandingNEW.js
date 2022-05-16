@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/landing.css'
 import { useNavigate } from 'react-router-dom'
 
-const Landing = (props) => {
+const LandingNEW = (props) => {
     let navigate = useNavigate()
     
     return (
@@ -15,10 +15,10 @@ const Landing = (props) => {
                 </div>
                 <div className='landing-button-wrapper'>
                     <div className='signupbutton'>
-                        <button className='landingbutton' onClick={() => navigate('/shelters')}>Add Shelter</button> 
+                        <button className='landingbutton' onClick={() => navigate('/states')}>Add Shelter</button> 
                      </div>
                      <div className='signinbutton'>
-                        <button className='landingbuttonSignin' onClick={() => navigate('/login')}>Add Furball</button>
+                        <button className='landingbuttonSignin' onClick={() => navigate('/shelters')}>Add Furball</button>
                         <p className='backto-Signin'>Shelter Already Added?</p>
                     </div> 
                 </div> 
@@ -29,4 +29,4 @@ const Landing = (props) => {
 
 
 
-export default Landing
+export default LandingNEW

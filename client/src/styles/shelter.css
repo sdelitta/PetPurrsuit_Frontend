@@ -1,0 +1,44 @@
+.state-wrapper {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: row;
+    /* padding: 10vh; */
+  }
+
+.editshelter-form {
+  position: relative;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+
+}
+.add-shelter-form {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* position: relative; */
+  /* background-color: rgb(127, 30, 127); */
+}
+
+.shelter-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.edit-delete {
+  position: absolute;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  /* position: absolute; */
+}
+
+  /* .hidden {
+      display: none;
+  } */

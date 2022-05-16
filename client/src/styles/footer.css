@@ -1,20 +1,20 @@
 .Footer {
-
-}
-
-.Middle-footer {
-    
-    position: absolute;
+    position: relative;
+    bottom: -100px;
+    left: 0;
     background: white;
     width: 100%;
     min-height: 60px;
     max-height: 20px;
-    bottom: -35px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 400;
     text-align: center;
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
+}
+
+.Middle-footer {
+    
 }

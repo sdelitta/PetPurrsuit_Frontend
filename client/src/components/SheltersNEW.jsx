@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetShelters } from '../services/PostServices'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 import AddShelter from './AddShelter'
 import DeleteShelter from './DeleteShelter'
 import EditShelter from './EditShelter'
@@ -33,8 +32,8 @@ console.log("shelters", shelters)
                         </div>
                         ))}
                 </div>
-                <AddShelter />
                 <div className='add-shelter-form'>
+                <AddShelter />
                 </div>
             <footer>
             </footer>

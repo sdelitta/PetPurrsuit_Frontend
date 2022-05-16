@@ -25,7 +25,7 @@ const CanineDetailsNEW = (props) => {
                 </div>
                 <div className='canine-wrapper'>                      
                         <div className='canine-content' key={caninesDetails.id}>
-                            <h2>{caninesDetails.catName}</h2>
+                            <h2>Name: {caninesDetails.dogName}</h2>
                             <h2>Breed: {caninesDetails.breed}</h2>
                             <h2>Age: {caninesDetails.age}</h2>
                             <div className="animal-photo">
@@ -33,9 +33,6 @@ const CanineDetailsNEW = (props) => {
                             </div>
                         </div>
                 </div>
-            <footer>
-                 <Footer />
-            </footer>
         </div> 
     
     )
