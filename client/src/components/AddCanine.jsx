@@ -2,8 +2,8 @@ import { useNavigate, useParams } from "react-router"
 import React, { useState } from "react"
 import AxiosInstance from "../AxiosInstance"
 
-function AddCanine( {id} ) {
-
+function AddCanine(props) {
+  const {id} = useParams()
   const [dogName, setDogName] = useState("")
   const [breed, setBreed] = useState("")
   const [age, setAge] = useState("")
@@ -20,11 +20,8 @@ function AddCanine( {id} ) {
     form.append("age", age)
     form.append("photo_url", photo_url)
     form.append("shelter_id", id)
-    await AxiosInstance.post(`/canines/${id}`, form)
+    await AxiosInstance.post(`/canines/`, form)
     window.location.reload()
-    // loadcanines();
-    // swal("Woooo!", "You Just Add a New canine", "success");
-    // navigate(`/explore`);
   }
 
   return (

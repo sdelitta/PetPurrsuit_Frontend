@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { GetFelinesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
+import DeleteFeline from './DeleteFeline'
 
 const FelineDetails = (props) => {
     const [felinesDetails, setFelinesDetails] = useState([])
@@ -28,6 +29,7 @@ const FelineDetails = (props) => {
                             <div className="animal-photo">
                                 <img src={felinesDetails.photo_url} alt=""></img>
                             </div>
+                            <DeleteFeline />
                         </div>
                 </div>
         </div> 

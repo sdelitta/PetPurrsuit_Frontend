@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { GetCaninesDetails } from '../services/PostServices'
 import { Link, useParams } from 'react-router-dom'
-import Footer from './Footer'
+import DeleteCanine from './DeleteCanine'
 // import AddAnimalButton from './AddCanineButton'
 
-const CanineDetailsNEW = (props) => {
-    console.log(props)
+const CanineDetailsNEW = () => {
+    console.log()
     const [caninesDetails, setCaninesDetails] = useState([])
     const {id} = useParams()
     // console.log(id)
@@ -31,6 +31,7 @@ const CanineDetailsNEW = (props) => {
                             <div className="animal-photo">
                                 <img src={caninesDetails.photo_url} alt=""></img>
                             </div>
+                            <DeleteCanine />
                         </div>
                 </div>
         </div> 

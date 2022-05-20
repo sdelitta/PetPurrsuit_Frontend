@@ -11,5 +11,12 @@
     display: flex;
     flex-direction: column;
     margin: 2vh;
+}
 
+.canine-content {
+    margin: 1vh;
+}
+
+.feline-content {
+    margin: 1vh;
 }

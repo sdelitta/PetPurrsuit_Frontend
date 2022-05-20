@@ -26,8 +26,12 @@
   position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+}
+
+.shelter-content {
+  margin: 1vh;
 }
 
 .edit-delete {

@@ -12,10 +12,10 @@ function AnimalList() {
         <CanineList />
         <FelineList />
       </div>
-      <div className="animal-forms">
+      {/* <div className="animal-forms">
         <AddCanine />
         <AddFeline />
-      </div>
+      </div> */}
     </div>
   )
 }

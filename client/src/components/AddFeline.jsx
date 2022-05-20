@@ -1,27 +1,28 @@
-import { useNavigate } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import React, { useState } from "react"
 import AxiosInstance from "../AxiosInstance"
 
-function AddFeline( {id} ) {
-    const [catName, setCatName] = useState("")
-    const [breed, setBreed] = useState("")
-    const [age, setAge] = useState("")
-    const [photo_url, setPhotoUrl] = useState("")
-    console.log(id)
+function AddFeline( props ) {
+  const {id} = useParams()
+  const [catName, setCatName] = useState("")
+  const [breed, setBreed] = useState("")
+  const [age, setAge] = useState("")
+  const [photo_url, setPhotoUrl] = useState("")
+  console.log(id)
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        let form = new FormData()
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let form = new FormData()
 
-        form.append("catName", catName)
-        form.append("breed", breed)
-        form.append("age", age)
-        form.append("photo_url", photo_url)
-        form.append("shelter_id", id)
-        await AxiosInstance.post(`/felines/${id}`, form)
-        window.location.reload()
+    form.append("catName", catName)
+    form.append("breed", breed)
+    form.append("age", age)
+    form.append("photo_url", photo_url)
+    form.append("shelter_id", id)
+    await AxiosInstance.post(`/felines/`, form)
+    window.location.reload()
 
-    }
+  }
 
     return (
       <div className="addfeline-container">

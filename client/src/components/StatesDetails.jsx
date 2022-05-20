@@ -31,7 +31,7 @@ const StatesDetails = (props) => {
                         <Link to={`/shelters/${shelter.id}`}>{shelter.shelterName}</Link>
                         </div>
                         {/* <div className='hidden'> */}
-                            <EditShelter id={shelter.id}/>
+                            {/* <EditShelter id={shelter.id}/> */}
                             <DeleteShelter id={shelter.id}/>
                         {/* </div> */}
                     </div>
